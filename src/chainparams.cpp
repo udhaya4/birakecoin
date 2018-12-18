@@ -1,4 +1,4 @@
-// Copyright (c) 2010 Satoshi Nakamoto
+ // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2017 The PIVX developers
@@ -57,7 +57,7 @@ static Checkpoints::MapCheckpoints mapCheckpoints =
     (0, uint256("00000c89a16d5d75011aed4ed5e21efc7bf3ffebe7411f46632771c0ceb907c3"));
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1533728621, // * UNIX timestamp of last checkpoint block
+    1545009851, // * UNIX timestamp of last checkpoint block
     0,          // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
     2000        // * estimated number of transactions per day after checkpoint
@@ -92,10 +92,10 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 4-byte int at any alignment.
          */
-        pchMessageStart[0] = 0x3a;
-        pchMessageStart[1] = 0x95;
-        pchMessageStart[2] = 0x56;
-        pchMessageStart[3] = 0x52;
+        pchMessageStart[0] = 0xd0;
+        pchMessageStart[1] = 0xe1;
+        pchMessageStart[2] = 0xf5;
+        pchMessageStart[3] = 0xec;
         vAlertPubKey = ParseHex("04bab2b3d8b251fc769dabc7e562e44b958a5f2f46cb069d38032faffe5e9a4c43503d529d8b53f3b082077bd68783bdc4d52410a7eac79a592bba8206130f767c");
         nDefaultPort = 39697;
         bnProofOfWorkLimit = ~uint256(0) >> 20; // BirakeCoin starting difficulty is 1 / 2^12
@@ -108,7 +108,7 @@ public:
         nTargetTimespan = 1 * 60; // BirakeCoin: 1 day
         nTargetSpacing = 1 * 60;  // BirakeCoin: 1 minute
         nLastPOWBlock = 750;
-        nMaturity = 50;
+        nMaturity = 1;
         nMasternodeCountDrift = 20;
         nMasternodeCollateralLimit = 10000;
         nModifierUpdateBlock = 615800;
@@ -124,7 +124,7 @@ public:
          *     CTxOut(nValue=50.00000000, scriptPubKey=0xA9037BAC7050C479B121CF)
          *   vMerkleTree: e0028e
          */
-        const char* pszTimestamp = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam felis.";
+        const char* pszTimestamp = "BBC News 17/Dec/2018 Mexico launches Tren Maya rail project";
         CMutableTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
@@ -135,7 +135,7 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime = 1533728621;
+        genesis.nTime = 1545009851;
         genesis.nBits = 0x1e0ffff0;
         genesis.nNonce = 936030;
 
@@ -143,10 +143,10 @@ public:
 
 
 
-        //printf("%s\n",hashGenesisBlock.ToString().c_str());
-        //printf("Merkel: %s\n",genesis.hashMerkleRoot.ToString().c_str());
-        assert(genesis.hashMerkleRoot == uint256("baf314231c2c162bb4bd33665c67320df47e74812821b1ad78faec22c9795553"));
-        assert(hashGenesisBlock == uint256("00000c89a16d5d75011aed4ed5e21efc7bf3ffebe7411f46632771c0ceb907c3"));
+       //printf("%s\n",hashGenesisBlock.ToString().c_str());
+       //printf("Merkel: %s\n",genesis.hashMerkleRoot.ToString().c_str());
+        assert(genesis.hashMerkleRoot == uint256("d91bd08707f3a6f6caa613db826acf1b6e9d77db3e21d00b693295d8916485ff"));
+        assert(hashGenesisBlock == uint256("0000078d17c1041ae4c09f1541b4990391854ebd9fb54a8b755fa107b107aa88bf0c2"));
 
 
      // vFixedSeeds.clear();
@@ -211,7 +211,7 @@ public:
         nTargetTimespan = 1 * 60; // BirakeCoin: 1 day
         nTargetSpacing = 1 * 60;  // BirakeCoin: 1 minute
         nLastPOWBlock = 200;
-        nMaturity = 15;
+        nMaturity = 1;
         nMasternodeCountDrift = 4;
         nMasternodeCollateralLimit = 10000;
         nModifierUpdateBlock = 51197; //approx Mon, 17 Apr 2017 04:00:00 GMT
@@ -220,12 +220,12 @@ public:
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
         genesis.nTime = 1534541116;
         genesis.nNonce = 753411;
-
+        
         hashGenesisBlock = genesis.GetHash();
-        //printf("%s\n",pszTimestamp);
-       // printf("%s\n",hashGenesisBlock.ToString().c_str());
-        //printf("Merkel: %s\n",genesis.hashMerkleRoot.ToString().c_str());
-        assert(hashGenesisBlock == uint256("0000057f2e15761f4a12d7cab16e046130666fd738dbd830cf0786d2e8fa94a71f757"));
+      // printf("%s\n",pszTimestamp);
+       //printf("de:%s\n",hashGenesisBlock.ToString().c_str());
+      // printf("Merkel: %s\n",genesis.hashMerkleRoot.ToString().c_str());
+        assert(hashGenesisBlock == uint256("00000c4bb9018f2645a51851ff30bcc54fcc5626e9cc8a65c09317d5ed157a6f457c8"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -292,8 +292,8 @@ public:
 
         hashGenesisBlock = genesis.GetHash();
         nDefaultPort = 39693;
-        //printf("%s\n",hashGenesisBlock.ToString().c_str());
-        assert(hashGenesisBlock == uint256("000008496be9d3149959a5a813c29dd27a9fb445b229929f88c072997898d1d068e4b"));
+        //printf("re:%s\n",hashGenesisBlock.ToString().c_str());
+        assert(hashGenesisBlock == uint256("00000cc11a3a7d9fa00ac69d29fe1693e5b641d9f9b772057649e09bccc2f0a94c12c"));
 
         vFixedSeeds.clear(); //! Testnet mode doesn't have any fixed seeds.
         vSeeds.clear();      //! Testnet mode doesn't have any DNS seeds.
